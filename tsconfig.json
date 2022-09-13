@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "target": "ES6",
+    "outDir": ".build",
+    "moduleResolution": "node",
+    "module": "CommonJS"
+  }
+}

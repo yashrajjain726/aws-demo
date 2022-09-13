@@ -1,0 +1,91 @@
+service: api-demo
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  region: ap-south-1
+
+functions:
+  getAllPosts:
+    handler: src/handler.getAllPosts
+    events:
+      - http:
+          path: getAllPosts
+          method: get
+          cors:
+            origin: "*" # <-- Specify allowed origin
+            headers: # <-- Specify allowed headers
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+
+  getPostViaId:
+    handler: src/handler.getPostViaId
+    events:
+      - http:
+          path: getPostViaId
+          method: get
+          cors:
+            origin: "*" # <-- Specify allowed origin
+            headers: # <-- Specify allowed headers
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+
+  createPost:
+    handler: src/handler.createPost
+    events:
+      - http:
+          path: createPost
+          method: post
+          cors:
+            origin: "*" # <-- Specify allowed origin
+            headers: # <-- Specify allowed headers
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+
+  deletePost:
+    handler: src/handler.deletePost
+    events:
+      - http:
+          path: deletePost
+          method: delete
+          cors:
+            origin: "*" # <-- Specify allowed origin
+            headers: # <-- Specify allowed headers
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+
+  updatePost:
+    handler: src/handler.updatePost
+    events:
+      - http:
+          path: updatePost
+          method: put
+          cors:
+            origin: "*" # <-- Specify allowed origin
+            headers: # <-- Specify allowed headers
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
