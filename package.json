@@ -1,0 +1,24 @@
+{
+  "name": "aws-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "sls deploy --aws-profile profile_yashraj",
+    "debug": "export AWS_SDK_LOAD_CONFIG=1 && export SLS_DEBUG=* && node --inspect /usr/local/bin/serverless offline --aws-profile profile_yashraj"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/pg": "^8.6.5",
+    "serverless-offline": "^10.0.2",
+    "serverless-plugin-typescript": "^2.1.2",
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "pg": "^8.8.0",
+    "sequelize-typescript": "^2.1.3",
+    "@types/aws-lambda": "^8.10.103"
+  }
+}
