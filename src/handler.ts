@@ -38,7 +38,7 @@ export async function getPostViaId(event: APIGatewayProxyEvent) {
     await db.dbConnect([Post]);
     if (event.queryStringParameters == null) {
       return {
-        statusCode: 404,
+        statusCode: 400,
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Credentials": true,
@@ -123,7 +123,7 @@ export async function deletePost(event: APIGatewayProxyEvent) {
 
     if (event.queryStringParameters == null) {
       return {
-        statusCode: 404,
+        statusCode: 400,
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Credentials": true,
