@@ -3,8 +3,8 @@ import PostColumn from "./post_column";
 
 @Table({
   timestamps: false,
-  tableName: "post-table",
-  schema: "post",
+  tableName: "post",
+  schema: "main-schema",
 })
 class Post extends Model {
   @Column({
@@ -17,28 +17,29 @@ class Post extends Model {
 
   @Column({
     type: DataType.STRING,
-    field: PostColumn.NAME,
+    field: PostColumn.POSTNAME,
+    allowNull: false,
   })
-  name?: string;
+  postName?: string;
 
   @Column({
     type: DataType.STRING,
-    field: PostColumn.EMAIL,
+    field: PostColumn.CREATEDBY,
+    allowNull: false,
   })
-  email?: string;
+  createdBy?: string;
+
+  @Column({
+    type: DataType.STRING,
+    field: PostColumn.PRICE,
+    allowNull: false,
+  })
+  price?: string;
 
   @Column({
     type: DataType.STRING,
     field: PostColumn.PHONENO,
-    allowNull: false,
   })
   phoneNo?: string;
-
-  @Column({
-    type: DataType.STRING,
-    field: PostColumn.USERTYPE,
-    allowNull: false,
-  })
-  userType?: string;
 }
 export default Post;
